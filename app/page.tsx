@@ -80,7 +80,7 @@ export default function HomePage() {
   const [isScrolled, setIsScrolled] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 550);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -170,7 +170,7 @@ export default function HomePage() {
         </div>
       </header>
 
-      {/* <NavHeader /> */}
+      <NavHeader />
       <section
         style={{
           background: "linear-gradient(42deg, #075e54 40%, #25d366 100%)",
