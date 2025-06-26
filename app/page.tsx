@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -77,6 +77,15 @@ export default function HomePage() {
     }
   };
 
+  const [isScrolled, setIsScrolled] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   const t = useTranslation(currentLanguage);
 
   return (
@@ -87,10 +96,85 @@ export default function HomePage() {
         onClose={() => setIsTourOpen(false)}
         language={currentLanguage}
       />
+      {/* Header */}
+      <header
+        className={`fixed top-3.5 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 rounded-full ${
+          isScrolled
+            ? " bg-gray-100 backdrop-blur-xl border border-white/10 scale-95 w-[90%] max-w-[80%]"
+            : " bg-[#ffffff] w-[95%] max-w-[70%]"
+        }`}
+      >
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center py-4">
+            <div className="flex items-center space-x-2">
+              <Building2 className="h-8 w-8 text-primary" />
+              <span className="text-2xl font-bold text-foreground">
+                ThunderWave
+              </span>
+            </div>
+            <nav className="hidden md:flex items-center space-x-8">
+              <button
+                onClick={() => scrollToSection("features-section")}
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {t.features}
+              </button>
+              <button
+                onClick={() => scrollToSection("pricing-section")}
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {t.pricing}
+              </button>
+              <button
+                onClick={() => scrollToSection("testimonials-section")}
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {t.testimonials}
+              </button>
+              <Link
+                href="/details"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {t.details}
+              </Link>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setIsTourOpen(true)}
+                className="gap-2"
+              >
+                <Play className="h-4 w-4" />
+                {t.startTour}
+              </Button>
+              <LanguageSelector
+                currentLang={currentLanguage}
+                onLanguageChange={setCurrentLanguage}
+              />
+              <ThemeToggle />
+              {/* <Button
+                variant="outline"
+                className="bg-background text-foreground border-border"
+              >
+                {t.login}
+              </Button> */}
+              <Button className="bg-CustomGreen hover:bg-CustomGreen/90 text-primary-foreground">
+                {t.startFree}
+              </Button>
+            </nav>
+          </div>
+        </div>
+      </header>
 
-      <NavHeader />
-
-      <section className="h-screen pt-20 pb-0 bg-gradient-to-br from-emerald-400 via-teal-500 to-cyan-600 dark:from-emerald-600 dark:via-teal-700 dark:to-cyan-800 text-white overflow-hidden relative">
+      {/* <NavHeader /> */}
+      <section
+        style={{
+          background: "linear-gradient(42deg, #075e54 40%, #25d366 100%)",
+        }}
+        // bg-gradient-to-br from-emerald-400 via-teal-500 to-cyan-600 dark:from-emerald-600 dark:via-teal-700 dark:to-cyan-800
+        className="h-screen pt-20 pb-0 
+     
+       text-white overflow-hidden relative"
+      >
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent"></div>
         <div
@@ -130,11 +214,11 @@ export default function HomePage() {
 
               <div className="space-y-6">
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="px-8 py-4 bg-white text-teal-600 text-lg font-bold rounded-xl hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-white/25">
+                  <button className="px-8 py-2 bg-white text-teal-600 text-lg font-bold rounded-full hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-white/25">
                     Criar uma conta gratuita
                   </button>
-                  <button className="px-8 py-4 bg-emerald-500/20 backdrop-blur-sm border-2 border-white/30 text-white text-lg font-semibold rounded-xl hover:bg-white/10 transition-all duration-300">
-                    Agendar Demo
+                  <button className="px-8   backdrop-blur-sm border-2 border-white/30 text-white text-lg font-semibold rounded-full hover:bg-white/10 transition-all duration-300">
+                    <span>Agendar Demo</span>
                   </button>
                 </div>
 
@@ -166,23 +250,28 @@ export default function HomePage() {
 
             {/* Right Visual */}
             <div className="relative flex justify-center items-center">
-              <div className="relative w-80 h-80">
+              <div className="relative w-full h-full">
                 {/* Central WhatsApp Icon */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-44 h-44 bg-white rounded-3xl flex items-center justify-center shadow-2xl transform hover:scale-105 transition-transform duration-300">
-                    <MessageCircle className="w-24 h-24 text-green-500" />
+                  <div className="w-full h-full  bg-white rounded-3xl flex items-center justify-center shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                    <img
+                      src="https://www.callbell.eu/assets/uploads/2023/04/WhatsApp-4.svg"
+                      alt="whatapp"
+                      className="w-full h-auto scale-150"
+                    />
+                    {/* <MessageCircle className="w-24 h-24 text-green-500" /> */}
                   </div>
                 </div>
 
                 {/* Floating Platform Icons */}
-                <div className="absolute top-8 right-8 animate-float">
+                <div className="absolute top-72 right-4 animate-float">
                   <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg hover:shadow-purple-500/25 transition-shadow">
                     <Instagram className="w-8 h-8 text-white" />
                   </div>
                 </div>
 
                 <div
-                  className="absolute bottom-12 left-4 animate-float"
+                  className="absolute bottom-16 left-4 animate-float"
                   style={{ animationDelay: "1s" }}
                 >
                   <div className="w-14 h-14 bg-blue-500 rounded-2xl flex items-center justify-center shadow-lg hover:shadow-blue-500/25 transition-shadow">
@@ -200,7 +289,7 @@ export default function HomePage() {
                 </div>
 
                 <div
-                  className="absolute bottom-20 right-12 animate-float"
+                  className="absolute bottom-72 right-20 animate-float"
                   style={{ animationDelay: "0.5s" }}
                 >
                   <div className="w-10 h-10 bg-red-500 rounded-xl flex items-center justify-center shadow-lg hover:shadow-red-500/25 transition-shadow">
@@ -356,7 +445,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      <Features />
+      {/*Features Section
+       */}
+      {/* <Features /> */}
       {/* Features Section */}
       <section id="features-section" className="py-20 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -795,6 +886,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
       <WhatsAppWidget />
       {/* Footer */}
       <footer className="bg-card text-card-foreground py-16 border-t">
