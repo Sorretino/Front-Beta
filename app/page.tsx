@@ -100,19 +100,24 @@ export default function HomePage() {
       <header
         className={`fixed top-3.5 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 rounded-full ${
           isScrolled
-            ? " bg-gray-100 backdrop-blur-xl border border-white/10 scale-95 w-[90%] max-w-[80%]"
-            : " bg-[#ffffff] w-[95%] max-w-[70%]"
+            ? " bg-gray-100 backdrop-blur-xl border border-white/10 scale-95 w-[90%] max-w-[80%] shadow-2xl"
+            : " bg-[#ffffff] w-[95%] max-w-[70%] border border-white/10 "
         }`}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
+          <div
+            className={`flex  items-center py-4    transition-all duration-300 ${
+              isScrolled ? " justify-center gap-8" : " justify-between "
+            }`}
+            //className="flex justify-between items-center py-4 gap-5"
+          >
             <div className="flex items-center space-x-2">
               <Building2 className="h-8 w-8 text-primary" />
               <span className="text-2xl font-bold text-foreground">
                 ThunderWave
               </span>
             </div>
-            <nav className="hidden md:flex items-center space-x-8">
+            <nav className="hidden md:flex items-center space-x-8 max-w-[80%] ">
               <button
                 onClick={() => scrollToSection("features-section")}
                 className="text-muted-foreground hover:text-foreground transition-colors"
