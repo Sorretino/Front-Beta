@@ -240,8 +240,8 @@ const NavHeader: React.FC = () => {
       <header
         className={`fixed top-3.5 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 rounded-full ${
           isScrolled
-            ? "bg-gray-100 backdrop-blur-xl border border-white/10 scale-95 w-[90%] max-w-[80%] shadow-2xl"
-            : "bg-[#ffffff] w-[95%] max-w-[70%] border border-white/10"
+            ? "bg-gray-100 dark:bg-[#1B1B1B]/40 backdrop-blur-xl border border-white/10 scale-95 w-[90%] max-w-[80%] shadow-2xl"
+            : "bg-[#ffffff] dark:bg-[#1B1B1B] w-[95%] max-w-[70%] border border-white/10"
         }`}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -277,9 +277,16 @@ const NavHeader: React.FC = () => {
           </div>
         </div>
       </header>
+    </>
+  );
+};
 
-      {/* <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50"> */}
-      {/* <header
+export default NavHeader;
+{
+  /* <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50"> */
+}
+{
+  /* <header
         className={`fixed top-3.5 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 rounded-full ${
           isScrolled
             ? " bg-gray-100 backdrop-blur-xl border border-white/10 scale-95 w-[90%] max-w-[80%]"
@@ -345,9 +352,5 @@ const NavHeader: React.FC = () => {
             </nav>
           </div>
         </div>
-      </header> */}
-    </>
-  );
-};
-
-export default NavHeader;
+      </header> */
+}

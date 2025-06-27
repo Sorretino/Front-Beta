@@ -253,7 +253,7 @@ export function TicketSystem({ language }: TicketSystemProps) {
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
-        <Button className="gap-2 bg-CustonCabe hover:bg-CustomBtnDev">
+        <Button className="gap-2 bg-CustonCabe hover:bg-CustomBtnDev dark:bg-CustomBtnDev dark:text-white">
           <HeadphonesIcon className="h-4 w-4" />
           {t.openTicket}
         </Button>

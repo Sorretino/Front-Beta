@@ -1,11 +1,4 @@
 import React from "react";
-import {
-  MessageCircle,
-  BarChart3,
-  Bot,
-  Megaphone,
-  Download,
-} from "lucide-react";
 
 const Features: React.FC = () => {
   return (
@@ -15,7 +8,7 @@ const Features: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-6">
-              <div className="max-w-3xl max-h-3x1  dark:bg-gray-800  flex items-center justify-center ">
+              <div className="max-w-3xl max-h-3x1    flex items-center justify-center ">
                 <img
                   src="https://www.callbell.eu/assets/uploads/2023/10/Group-4-4.png"
                   alt="Interface de chat"
@@ -42,11 +35,11 @@ const Features: React.FC = () => {
       </section>
 
       {/* Analytics Section */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-900">
+      <section className="py-20 bg-gray-50 dark:bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-6 lg:order-2">
-              <div className="max-w-3xl max-h-3x1  dark:bg-gray-800  flex items-center justify-center ">
+              <div className="max-w-3xl max-h-3x1   flex items-center justify-center ">
                 <img
                   src="https://www.callbell.eu/assets/uploads/2023/10/Group-1000010623-4.svg"
                   alt="Dashboard de análise"
@@ -92,7 +85,7 @@ const Features: React.FC = () => {
               </div>
               <div className="flex justify-center">
                 <div className="relative">
-                  <div className="max-w-3xl max-h-3x1  dark:bg-gray-800  flex items-center justify-center ">
+                  <div className="max-w-3xl max-h-3x1   flex items-center justify-center ">
                     {/* <MessageCircle className="w-16 h-16 text-green-500" /> */}
                     <img
                       src="https://www.callbell.eu/assets/uploads/2023/04/WhatsApp-6.svg"
@@ -112,7 +105,7 @@ const Features: React.FC = () => {
       </section>
 
       {/* Campaign Section */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-900">
+      <section className="py-20 bg-gray-50 dark:bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
@@ -176,7 +169,7 @@ const Features: React.FC = () => {
             </div>
 
             <div className="flex justify-center">
-              <div className="max-w-3xl max-h-3x1  dark:bg-gray-800  flex items-center justify-center ">
+              <div className="max-w-3xl max-h-3x1   flex items-center justify-center ">
                 <img
                   src="https://www.callbell.eu/assets/uploads/2023/04/WhatsAppConvoPerspective-min.png"
                   alt="Campanha no celular"
