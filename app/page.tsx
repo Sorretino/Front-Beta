@@ -33,6 +33,7 @@ import {
   Instagram,
   Facebook,
   Send,
+  Check,
 } from "lucide-react";
 import Link from "next/link";
 import { type Language, useTranslation } from "@/lib/i18n";
@@ -97,7 +98,7 @@ export default function HomePage() {
         language={currentLanguage}
       />
       {/* Header */}
-      <header
+      {/* <header
         className={`fixed top-3.5 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 rounded-full ${
           isScrolled
             ? " bg-gray-100 backdrop-blur-xl border border-white/10 scale-95 w-[90%] max-w-[80%] shadow-2xl"
@@ -156,19 +157,19 @@ export default function HomePage() {
                 onLanguageChange={setCurrentLanguage}
               />
               <ThemeToggle />
-              {/* <Button
+              <Button
                 variant="outline"
                 className="bg-background text-foreground border-border"
               >
                 {t.login}
-              </Button> */}
+              </Button>
               <Button className="bg-CustomGreen hover:bg-CustomGreen/90 text-primary-foreground">
                 {t.startFree}
               </Button>
             </nav>
           </div>
         </div>
-      </header>
+      </header> */}
 
       <NavHeader />
       <section
@@ -220,7 +221,7 @@ export default function HomePage() {
               <div className="space-y-6">
                 <div className="flex flex-col sm:flex-row gap-4">
                   <button className="px-8 py-2 bg-white text-teal-600 text-lg font-bold rounded-full hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-white/25">
-                    Criar uma conta gratuita
+                    Fale com nossa equipe
                   </button>
                   <button className="px-8   backdrop-blur-sm border-2 border-white/30 text-white text-lg font-semibold rounded-full hover:bg-white/10 transition-all duration-300">
                     <span>Agendar Demo</span>
@@ -243,11 +244,11 @@ export default function HomePage() {
                 <div className="flex items-center space-x-6 text-sm text-emerald-200">
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-emerald-300 rounded-full"></div>
-                    <span>Teste grátis por 7 dias</span>
+                    <span>7 dias por semana</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-emerald-300 rounded-full"></div>
-                    <span>Sem cartão de crédito</span>
+                    <span>Suporte 24/7</span>
                   </div>
                 </div>
               </div>
@@ -332,7 +333,7 @@ export default function HomePage() {
                 </Badge>
                 <h1 className="text-4xl lg:text-6xl font-bold text-foreground leading-tight">
                   {t.heroTitle}
-                  <span className="text-primary">
+                  <span className="text-CustonCabe dark:text-CustomBtnDev">
                     {" "}
                     {t.heroTitleHighlight}
                   </span>{" "}
@@ -352,7 +353,7 @@ export default function HomePage() {
                 </div>
                 <Button
                   size="lg"
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground h-12 px-8"
+                  className="bg-CustonCabe hover:bg-CustonCabe/90 text-primary-foreground h-12 px-8"
                 >
                   {t.startFreeTrial}
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -452,16 +453,17 @@ export default function HomePage() {
 
       {/*Features Section
        */}
-      {/* <Features /> */}
+      <Features />
       {/* Features Section */}
       <section id="features-section" className="py-20 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
-            <Badge className="bg-primary/10 text-primary">
+            <Badge className="bg-primary/10 text-primary dark:text-CustomBtnDev">
               Recursos Principais
             </Badge>
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground">
-              {t.featuresTitle}
+            <h2 className="text-3xl lg:text-4xl font-bold text-CustonCabe dark:text-CustomBtnDev">
+              {t.featuresTitle}{" "}
+              <span className="text-foreground">{t.featuresTitleSub}</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               {t.featuresDescription}
@@ -556,7 +558,10 @@ export default function HomePage() {
           <div className="text-center space-y-4 mb-16">
             <Badge className="bg-primary/10 text-primary">Como Funciona</Badge>
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground">
-              Simples de configurar, poderoso de usar
+              <span className="text-CustonCabe dark:text-CustomBtnDev">
+                Simples de configurar,
+              </span>{" "}
+              poderoso de usar
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Em apenas alguns passos você terá sua plataforma multitenant
@@ -602,14 +607,15 @@ export default function HomePage() {
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing-section" className="py-20 bg-muted/30">
+      <section id="pricing-section" className="py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
             <Badge className="bg-primary/10 text-primary">
               Planos e Preços
             </Badge>
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground">
-              {t.pricingTitle}
+            <h2 className="text-3xl lg:text-4xl font-bold text-CustonCabe dark:text-CustomBtnDev">
+              {t.pricingTitle}{" "}
+              <span className="text-foreground">{t.pricingTitleSub}</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               {t.pricingDescription}
@@ -620,10 +626,10 @@ export default function HomePage() {
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {/* Starter Plan */}
-            <Card className="border-2 border-border hover:border-primary/50 transition-colors">
+            {/* Starter Plan border-border*/}
+            <Card className="border-2  border-border dark:border-white/10 hover:border-rose-500/50 transition-colors dark:bg-gradient-to-b from-neutral-900 to-neutral-950 h-full">
               <CardHeader className="text-center pb-8">
-                <CardTitle className="text-2xl">Starter</CardTitle>
+                <CardTitle className="text-2xl">Essencial</CardTitle>
                 <CardDescription>Perfeito para começar</CardDescription>
                 <div className="mt-4">
                   <span className="text-4xl font-bold">R$ 99</span>
@@ -634,6 +640,7 @@ export default function HomePage() {
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="h-5 w-5 text-primary" />
+                    <Check className="w-5 h-5 text-primary" />
                     <span>Até 5 tenants</span>
                   </div>
                   <div className="flex items-center space-x-3">
@@ -653,16 +660,19 @@ export default function HomePage() {
                     <span>Backup diário</span>
                   </div>
                 </div>
-                <Button className="w-full mt-8 bg-primary hover:bg-primary/90 text-primary-foreground">
+                <Button className="w-full mt-8 bg-rose-500 hover:bg-rose-500/90 text-primary-foreground">
                   Começar Grátis
                 </Button>
               </CardContent>
             </Card>
 
             {/* Professional Plan */}
-            <Card className="border-2 border-primary relative hover:border-primary/80 transition-colors">
+            <Card
+              className="relative rounded-xl dark:bg-gradient-to-b from-neutral-900 to-neutral-950 h-full dark:hover:border-CustomBtnDev/80 transition-colors border-CustonCabe dark:border-CustomBtnDev  border-2"
+              // className="border-2 border-CustomBtnGreen relative hover:border-primary/80 transition-colors "
+            >
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <Badge className="bg-primary text-primary-foreground px-4 py-1">
+                <Badge className="bg-CustonCabe dark:bg-CustomBtnDev text-primary-foreground px-4 py-1">
                   {t.popular}
                 </Badge>
               </div>
@@ -701,14 +711,20 @@ export default function HomePage() {
                     <span>Integrações ilimitadas</span>
                   </div>
                 </div>
-                <Button className="w-full mt-8 bg-primary hover:bg-primary/90 text-primary-foreground">
+                <Button
+                  // style={{
+                  //   background:
+                  //     "linear-gradient(42deg, #075e54 40%, #25d366 100%)",
+                  // }}
+                  className="w-full mt-8 bg-CustonCabe dark:bg-CustomBtnDev dark:hover:bg-CustomBtnDev/90 text-primary-foreground"
+                >
                   Começar Teste
                 </Button>
               </CardContent>
             </Card>
 
             {/* Enterprise Plan */}
-            <Card className="border-2 border-border hover:border-primary/50 transition-colors">
+            <Card className="border-2 border-border dark:border-white/10 hover:border-indigo-600/50 transition-colors dark:bg-gradient-to-b from-neutral-900 to-neutral-950 h-full">
               <CardHeader className="text-center pb-8">
                 <CardTitle className="text-2xl">Enterprise</CardTitle>
                 <CardDescription>Para grandes organizações</CardDescription>
@@ -744,7 +760,7 @@ export default function HomePage() {
                     <span>Customizações</span>
                   </div>
                 </div>
-                <Button className="w-full mt-8 bg-primary hover:bg-primary/90 text-primary-foreground">
+                <Button className="w-full mt-8 bg-indigo-600 hover:bg-indigo-600/90 text-primary-foreground">
                   Falar com Vendas
                 </Button>
               </CardContent>
@@ -858,34 +874,39 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary to-primary/80">
+      {/* CTA Section bg-gradient-to-r from-primary to-primary/80*/}
+      <section
+        className="py-20 "
+        style={{
+          background: "linear-gradient(42deg, #075e54 40%, #25d366 100%)",
+        }}
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-3xl mx-auto space-y-8">
-            <h2 className="text-3xl lg:text-4xl font-bold text-primary-foreground">
+            <h2 className="text-3xl lg:text-4xl font-bold text-white">
               Pronto para transformar seu negócio?
             </h2>
-            <p className="text-xl text-primary-foreground/90">
+            <p className="text-xl text-white/90">
               Junte-se a mais de 1.000 empresas que já confiam na MultiTenant
               Pro para gerenciar seus múltiplos negócios.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                className="bg-background text-foreground hover:bg-background/90 h-12 px-8"
+                className="bg-white text-neutral-800 hover:bg-gray/10 h-12 px-8"
               >
-                Começar Teste Grátis
+                Falar com nossa equipe
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary h-12 px-8"
+                className="bg-transparent border-white text-white hover:bg-transparent hover:text-primary h-12 px-8"
               >
                 Agendar Demo
               </Button>
             </div>
-            <p className="text-sm text-primary-foreground/80">
+            <p className="text-sm text-white">
               14 dias grátis • Sem cartão de crédito • Suporte 24/7
             </p>
           </div>
@@ -900,7 +921,7 @@ export default function HomePage() {
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
                 <Building2 className="h-8 w-8 text-primary" />
-                <span className="text-2xl font-bold">MultiTenant Pro</span>
+                <span className="text-2xl font-bold">ThunderWave</span>
               </div>
               <p className="text-muted-foreground">
                 A plataforma mais avançada para gerenciamento de múltiplos

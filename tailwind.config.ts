@@ -20,6 +20,9 @@ const config = {
     },
     extend: {
       colors: {
+        CustonCabe: "#058563",
+        CustomBtnDev: "#4ADE80",
+        CustomBtnGreen: "#075e54",
         CustomGreen: "#43b899",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

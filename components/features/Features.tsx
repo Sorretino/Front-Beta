@@ -15,7 +15,7 @@ const Features: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-6">
-              <div className="w-96 h-80 bg-gray-100 dark:bg-gray-800 rounded-2xl flex items-center justify-center shadow-lg">
+              <div className="max-w-3xl max-h-3x1  dark:bg-gray-800  flex items-center justify-center ">
                 <img
                   src="https://www.callbell.eu/assets/uploads/2023/10/Group-4-4.png"
                   alt="Interface de chat"
@@ -23,16 +23,19 @@ const Features: React.FC = () => {
                 />
               </div>
             </div>
-            <div className="space-y-6">
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white leading-tight">
-                Converse com seus clientes pelo WhatsApp
-              </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                Centralize todas as conversas de WhatsApp Business em um só
-                lugar. Sua equipe pode responder clientes de forma organizada e
-                eficiente, com histórico completo de conversas e informações do
-                cliente sempre à mão.
-              </p>
+            <div className=" space-y-6">
+              <div className=" w-full space-y-6 ">
+                <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight text-right">
+                  Converse com seus clientes{" "}
+                  <span className="text-CustonCabe"> pelo WhatsApp</span>{" "}
+                </h2>
+                <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed text-right">
+                  Centralize todas as conversas de WhatsApp Business em um só
+                  lugar. Sua equipe pode responder clientes de forma organizada
+                  e eficiente, com histórico completo de conversas e informações
+                  do cliente sempre à mão.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -43,7 +46,7 @@ const Features: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-6 lg:order-2">
-              <div className="w-96 h-80 bg-white dark:bg-gray-800 rounded-2xl flex items-center justify-center shadow-lg">
+              <div className="max-w-3xl max-h-3x1  dark:bg-gray-800  flex items-center justify-center ">
                 <img
                   src="https://www.callbell.eu/assets/uploads/2023/10/Group-1000010623-4.svg"
                   alt="Dashboard de análise"
@@ -52,15 +55,18 @@ const Features: React.FC = () => {
               </div>
             </div>
             <div className="space-y-6 lg:order-1">
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white leading-tight">
-                Analise estatísticas e métricas no WhatsApp
-              </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                Visualize e monitore as estatísticas do WhatsApp em tempo real
-                através dos nossos dashboards. Acompanhe métricas importantes
-                como tempo de resposta, satisfação do cliente e performance da
-                equipe.
-              </p>
+              <div className=" w-full space-y-6 ">
+                <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight text-left">
+                  <span className="text-CustonCabe">Analise estatísticas</span>{" "}
+                  e métricas no WhatsApp
+                </h2>
+                <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed text-left">
+                  Visualize e monitore as estatísticas do WhatsApp em tempo real
+                  através dos nossos dashboards. Acompanhe métricas importantes
+                  como tempo de resposta, satisfação do cliente e performance da
+                  equipe.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -86,7 +92,7 @@ const Features: React.FC = () => {
               </div>
               <div className="flex justify-center">
                 <div className="relative">
-                  <div className="min-w-96 min-h-96  flex items-center justify-center ">
+                  <div className="max-w-3xl max-h-3x1  dark:bg-gray-800  flex items-center justify-center ">
                     {/* <MessageCircle className="w-16 h-16 text-green-500" /> */}
                     <img
                       src="https://www.callbell.eu/assets/uploads/2023/04/WhatsApp-6.svg"
@@ -111,9 +117,9 @@ const Features: React.FC = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
               <div className="space-y-4">
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white leading-tight">
+                <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white leading-tight">
                   Envie{" "}
-                  <span className="text-teal-600 dark:text-teal-400">
+                  <span className="text-CustonCabe dark:text-CustonCabe">
                     campanhas de marketing
                   </span>{" "}
                   com o módulo de broadcast
@@ -127,7 +133,7 @@ const Features: React.FC = () => {
 
               <div className="grid grid-cols-1 gap-6">
                 <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-teal-600 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">
+                  <div className="w-8 h-8 bg-CustonCabe text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">
                     1
                   </div>
                   <div>
@@ -140,7 +146,7 @@ const Features: React.FC = () => {
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-teal-600 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">
+                  <div className="w-8 h-8 bg-CustonCabe text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">
                     2
                   </div>
                   <div>
@@ -153,7 +159,7 @@ const Features: React.FC = () => {
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-teal-600 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">
+                  <div className="w-8 h-8 bg-CustonCabe text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">
                     3
                   </div>
                   <div>
@@ -170,9 +176,9 @@ const Features: React.FC = () => {
             </div>
 
             <div className="flex justify-center">
-              <div className="w-64 h-96 bg-white dark:bg-gray-800 rounded-3xl shadow-2xl flex items-center justify-center">
+              <div className="max-w-3xl max-h-3x1  dark:bg-gray-800  flex items-center justify-center ">
                 <img
-                  src="https://images.pexels.com/photos/4050302/pexels-photo-4050302.jpeg?auto=compress&cs=tinysrgb&w=300&h=400&fit=crop"
+                  src="https://www.callbell.eu/assets/uploads/2023/04/WhatsAppConvoPerspective-min.png"
                   alt="Campanha no celular"
                   className="w-full h-full object-cover rounded-3xl"
                 />

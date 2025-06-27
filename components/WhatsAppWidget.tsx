@@ -14,7 +14,9 @@ const WhatsAppWidget: React.FC = () => {
                 <MessageCircle className="w-6 h-6 text-CustomGreen" />
               </div>
               <div>
-                <h3 className="font-semibold text-white">Suporte Callbell</h3>
+                <h3 className="font-semibold text-white">
+                  Suporte ThunderWave
+                </h3>
                 <p className="text-green-100 text-sm">Online agora</p>
               </div>
             </div>

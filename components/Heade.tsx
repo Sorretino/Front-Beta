@@ -89,7 +89,7 @@ const NavHeader: React.FC = () => {
       dropdownItems: [
         {
           label: "WhatsApp",
-          href: "/details",
+          href: "/whatsappbusinnes",
           description: "Plataforma principal de mensagens",
         },
         {
@@ -119,7 +119,7 @@ const NavHeader: React.FC = () => {
   ];
 
   // Função para renderizar item de navegação
-  const renderNavigationItem = (item, index) => {
+  const renderNavigationItem = (item: any, index: any) => {
     // Se tem dropdown e dropdownItems, renderiza dropdown
     if (item.hasDropdown && item.dropdownItems) {
       return (
@@ -133,20 +133,22 @@ const NavHeader: React.FC = () => {
           <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 bg-white/95 backdrop-blur-xl border border-gray-200 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-out transform translate-y-2 group-hover:translate-y-0 z-50">
             <div className="py-2">
               {/* Renderizar dropdownItems */}
-              {item.dropdownItems.map((dropdownItem, dropdownIndex) => (
-                <Link
-                  key={dropdownIndex}
-                  href={dropdownItem.href}
-                  className="flex flex-col items-start px-4 py-3 hover:bg-gray-50 transition-colors duration-200 rounded-md mx-2"
-                >
-                  <div className="font-medium text-foreground">
-                    {dropdownItem.label}
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    {dropdownItem.description}
-                  </div>
-                </Link>
-              ))}
+              {item.dropdownItems.map(
+                (dropdownItem: any, dropdownIndex: any) => (
+                  <Link
+                    key={dropdownIndex}
+                    href={dropdownItem.href}
+                    className="flex flex-col items-start px-4 py-3 hover:bg-gray-50 transition-colors duration-200 rounded-md mx-2"
+                  >
+                    <div className="font-medium text-foreground">
+                      {dropdownItem.label}
+                    </div>
+                    <div className="text-sm text-muted-foreground">
+                      {dropdownItem.description}
+                    </div>
+                  </Link>
+                )
+              )}
 
               {/* Se for "Plataforma", adicionar os botões especiais */}
               {item.label === "Plataforma" && (
@@ -194,7 +196,7 @@ const NavHeader: React.FC = () => {
     // Se tem dropdown mas não tem dropdownItems, renderiza botão com âncora
     if (item.hasDropdown) {
       // Mapear os labels para as seções corretas
-      const sectionMap = {
+      const sectionMap: any = {
         Recurso: "features-section",
         Plano: "pricing-section",
         Depoimentos: "testimonials-section",
@@ -265,7 +267,7 @@ const NavHeader: React.FC = () => {
 
               {/* Botão CTA sempre visível */}
               <Button
-                className={`bg-green-600 hover:bg-green-700 text-white rounded-full transition-all duration-300 ${
+                className={`bg-CustonCabe hover:bg-CustomBtnGreen text-white rounded-full transition-all duration-300 ${
                   isScrolled ? "px-4 py-2 text-sm" : "px-6 py-2"
                 }`}
               >

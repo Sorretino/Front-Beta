@@ -2,9 +2,9 @@ export const languages = {
   pt: "Português",
   en: "English",
   es: "Español",
-} as const
+} as const;
 
-export type Language = keyof typeof languages
+export type Language = keyof typeof languages;
 
 export const translations = {
   pt: {
@@ -29,13 +29,16 @@ export const translations = {
     support247: "Suporte 24/7",
 
     // Features
-    featuresTitle: "Tudo que você precisa para gerenciar múltiplos negócios",
+    featuresTitle: "Tudo que você ",
+    featuresTitleSub: "precisa para gerenciar múltiplos negócios",
     featuresDescription:
       "Nossa plataforma oferece isolamento completo, segurança avançada e personalização total para cada tenant.",
 
     // Pricing
-    pricingTitle: "Escolha o plano ideal para seu negócio",
-    pricingDescription: "Planos flexíveis que crescem com você. Comece grátis e escale conforme necessário.",
+    pricingTitle: "Escolha o plano ",
+    pricingTitleSub: "ideal para seu negócio",
+    pricingDescription:
+      "Planos flexíveis que crescem com você. Comece grátis e escale conforme necessário.",
     comparePlans: "Comparar Planos",
 
     // Support
@@ -73,13 +76,16 @@ export const translations = {
     support247: "24/7 Support",
 
     // Features
-    featuresTitle: "Everything you need to manage multiple businesses",
+    featuresTitle: "Everything you need ",
+    featuresTitleSub: "to manage multiple businesses",
     featuresDescription:
       "Our platform offers complete isolation, advanced security and full customization for each tenant.",
 
     // Pricing
-    pricingTitle: "Choose the ideal plan for your business",
-    pricingDescription: "Flexible plans that grow with you. Start free and scale as needed.",
+    pricingTitle: "Choose the ideal ",
+    pricingTitleSub: "plan for your business",
+    pricingDescription:
+      "Flexible plans that grow with you. Start free and scale as needed.",
     comparePlans: "Compare Plans",
 
     // Support
@@ -117,13 +123,16 @@ export const translations = {
     support247: "Soporte 24/7",
 
     // Features
-    featuresTitle: "Todo lo que necesitas para gestionar múltiples negocios",
+    featuresTitle: "Todo lo que ",
+    featuresTitleSub: "necesitas para gestionar múltiples negocios",
     featuresDescription:
       "Nuestra plataforma ofrece aislamiento completo, seguridad avanzada y personalización total para cada tenant.",
 
     // Pricing
-    pricingTitle: "Elige el plan ideal para tu negocio",
-    pricingDescription: "Planes flexibles que crecen contigo. Comienza gratis y escala según sea necesario.",
+    pricingTitle: "Elige el plan ",
+    pricingTitleSub: "ideal para tu negocio",
+    pricingDescription:
+      "Planes flexibles que crecen contigo. Comienza gratis y escala según sea necesario.",
     comparePlans: "Comparar Planes",
 
     // Support
@@ -139,8 +148,8 @@ export const translations = {
     contact: "Contacto",
     close: "Cerrar",
   },
-}
+};
 
 export function useTranslation(lang: Language) {
-  return translations[lang] || translations.pt
+  return translations[lang] || translations.pt;
 }
