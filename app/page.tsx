@@ -49,6 +49,8 @@ import NavHeader from "@/components/Heade";
 import Hero from "@/components/hero/Hero";
 import Recurse from "@/components/recurse/Recurses";
 import NavFooter from "@/components/footer/Footer";
+import ScrollTimeline from "@/components/scrollTime/timeScroll";
+import Timeline from "@/components/scrollTime/timevone";
 
 export default function HomePage() {
   const [currentPage, setCurrentPage] = useState<"home" | "whatsapp-business">(
@@ -314,7 +316,13 @@ export default function HomePage() {
        */}
       <Features />
       {/* Features Section */}
+      {/* ScrollTime Section */}
+      <ScrollTimeline />
+      <Timeline />
+      {/* ScrollTime Section */}
+      {/* Recusos Section */}
       <Recurse currentLanguage={currentLanguage} />
+      {/* Recusos Section */}
       {/* How it Works */}
       <section className="py-20 dark:bg-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
